@@ -1,0 +1,7 @@
+#include <click/vector.hh>
+#include <click/hashtable.hh>
+
+struct TableEntry{
+     int cost;
+     Vector<int> nextHop;
+};

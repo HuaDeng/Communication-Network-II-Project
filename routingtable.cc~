@@ -1,0 +1,26 @@
+#include <click/config.h>
+#include <click/confparse.hh>
+#include <click/error.hh>
+#include <click/timer.hh>
+#include <click/packet.hh>
+#include "routingtable.hh" 
+#include "packets.hh"
+
+CLICK_DECLS 
+
+RoutingTable::RoutingTable() : _timerInit(this) {
+	_routing_table = HashTable<uint16_t, struct TableEntry>();
+	click_chatter("Size of _routing_table %d", sizeof(_routing_table));
+}
+
+RoutingTable::~RoutingTable(){
+	
+}
+
+int RoutingTable::initialize(ErrorHandler *errh){
+    _timerInit.initialize(this);	
+    return 0;
+}
+
+CLICK_ENDDECLS 
+EXPORT_ELEMENT(RoutingTable)

@@ -1,0 +1,6 @@
+#include <click/hashtable.hh>
+#include <click/vector.hh>
+#include "entries.hh"
+
+HashTable<uint16_t, struct TableEntry> _global_routing_table;
+

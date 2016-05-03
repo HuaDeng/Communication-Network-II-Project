@@ -1,0 +1,8 @@
+#include "topoelement.hh"
+
+struct UpdateTable{
+	//HashTable<uint16_t, struct TableEntry> *_update_table_entry;
+	Vector<uint16_t> _dstAddr;
+	Vector<int> _cost;
+	Vector< Vector<int> > _nextHop;	
+};
